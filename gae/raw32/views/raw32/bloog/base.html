@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>        
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/blueprint/screen.css" type="text/css" media="screen, projection"/>
+    <link rel="stylesheet" href="/static/blueprint/print.css" type="text/css" media="print"/>
+    <!--[if IE]><link rel="stylesheet" href="/static/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
+    <link rel="stylesheet" href="/static/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection"/>
+    <link rel="alternate" type="application/rss+xml" title="{{ blog.title }} RSS Feed" href="{{ blog.root_url }}{{ blog.master_atom_url }}" />
+    <link rel="icon" type="image/png" href="/static/images/icon.png"/>
+    {% block head %}
+    {% endblock %}
+  </head>
+  
+  <body>
+    <div id="top">&nbsp;</div>
+   
+    <div id="top_ad"><img src="/static/images/leaderboard_img.jpg" /></div>
+  
+    <div class="container">  
+      <div class="span-24">
+        <div class="span-16"><img src="/static/images/logo.png"/></div>
+        <div class="span-8 last">
+          <div class="span-8">&nbsp;</div>
+          <div class="span-8">&nbsp;</div>
+          <div class="span-8">
+            <div class="span-2 c"><a href="">About</a></div>
+            <div class="span-2 c"><a href="">Advertise</a></div>
+            <div class="span-2 c"><a href="">Archives</a></div>
+            <div class="span-2 c last"><a href="">Contact</a></div>
+          </div>
+        </div>    
+      </div>
+      <hr/>
+    
+      <div class="span-14 colborder">
+        <h6>Here's a box</h6>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+      </div>
+  
+      <div class="span-9 last">
+        <div class="span-9">
+          <h6>And another box</h6>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat laboris nisi ut aliquip.</p>
+        </div>
+        <div class="span-4">
+          <img src="/static/images/skyscraper_img.jpg" />
+        </div>
+        <div class="span-5 last">
+          <img src="/static/images/wideskyscraper_img.jpg" />
+        </div>
+      </div>
+    
+      <hr/>
+      <div class="span-24">
+        <div class="span-20">
+          <div class="span-2">RAW32:</div>
+          <div class="span-2 c"><a href="">About</a></div>
+          <div class="span-2 c"><a href="">Advertise</a></div>
+          <div class="span-2 c"><a href="">Archives</a></div>
+          <div class="span-2 c last"><a href="">Contact</a></div>
+        </div>
+        <div class="span-4 last">&copy 2008 RAW32</div>
+      </div>
+    </div>
+  </body>
+</html>
