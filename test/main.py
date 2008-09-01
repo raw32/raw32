@@ -36,7 +36,8 @@ class MainHandler(webapp.RequestHandler):
         if os.path.exists(path):
           self.response.out.write(template.render(path, {}))
         else:
-          self.response.out.write('404')
+          self.error(404)
+          self.response.out.write(template.render('404.html', {}))
       else:
         self.redirect(''.join(['/', path, '/']), permanent=True)
 
