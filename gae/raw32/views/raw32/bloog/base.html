@@ -13,14 +13,14 @@
     {% endblock %}
   </head>
   
-  <body>
+  <body class="yui-skin-sam">
     <div id="top">&nbsp;</div>
    
     <div id="top_ad"><img src="/static/images/leaderboard_img.jpg" /></div>
   
     <div class="container">  
       <div class="span-24">
-        <div class="span-16"><img src="/static/images/logo.png"/></div>
+        <div class="span-16"><a href="/"><img src="/static/images/logo.png"/></a></div>
         <div class="span-8 last">
           <div class="span-8">&nbsp;</div>
           <div class="span-8">&nbsp;</div>
@@ -35,8 +35,11 @@
       <hr/>
     
       <div class="span-14 colborder">
-        <h6>Here's a box</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+        {% block first_column %}
+        {% for article in articles %}
+            {% include 'article_excerpt.html' %}
+        {% endfor %}
+        {% endblock %}
       </div>
   
       <div class="span-9 last">
@@ -62,7 +65,7 @@
           <div class="span-2 c last"><a href="">Contact</a></div>
         </div>
         <div class="span-4 last">&copy 2008 RAW32</div>
-      </div>
+      </div>      
     </div>
   </body>
 </html>
