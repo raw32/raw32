@@ -27,11 +27,12 @@ class MainHandler(webapp.RequestHandler):
 
   def get(self, path):
     if path == '':
-      path = os.path.join(os.path.dirname(__file__), 'index.html')
+      path = os.path.join(os.path.dirname(__file__), 'site/index.html')
       self.response.out.write(template.render(path, {}))
     else:      
       if path.endswith('/'):
         path = path[0:-1]
+        path = ''.join(['site/',path])
         path = os.path.join(os.path.dirname(__file__), path)
         if os.path.exists(path):
           self.response.out.write(template.render(path, {}))

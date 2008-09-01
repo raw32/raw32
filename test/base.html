@@ -8,19 +8,17 @@
     <!--[if IE]><link rel="stylesheet" href="/static/blueprint/ie.css" type="text/css" media="screen, projection"/><![endif]-->
     <link rel="stylesheet" href="/static/blueprint/plugins/fancy-type/screen.css" type="text/css" media="screen, projection"/>
     <link rel="alternate" type="application/rss+xml" title="{{ blog.title }} RSS Feed" href="{{ blog.root_url }}{{ blog.master_atom_url }}" />
-    <link rel="icon" type="image/png" href="/static/images/icon.png"/>
-    {% block head %}
-    {% endblock %}
+    <link rel="icon" type="image/png" href="/images/icon.png"/>
   </head>
   
-  <body class="yui-skin-sam">
+  <body>
     <div id="top">&nbsp;</div>
    
-    <div id="top_ad"><img src="/static/images/leaderboard_img.jpg" /></div>
+    <div id="top_ad"><img src="/images/leaderboard_img.jpg" /></div>
   
     <div class="container">  
       <div class="span-24">
-        <div class="span-16"><a href="/"><img src="/static/images/logo.png"/></a></div>
+        <div class="span-16"><a href="/"><img src="/images/logo.png"/></a></div>
         <div class="span-8 last">
           <div class="span-8">&nbsp;</div>
           <div class="span-8">&nbsp;</div>
@@ -35,11 +33,7 @@
       <hr/>
     
       <div class="span-14 colborder">
-        {% block first_column %}
-        {% for article in articles %}
-            {% include 'article_excerpt.html' %}
-        {% endfor %}
-        {% endblock %}
+        {% block content %}{% endblock %}
       </div>
   
       <div class="span-9 last">
@@ -48,10 +42,10 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat laboris nisi ut aliquip.</p>
         </div>
         <div class="span-4">
-          <img src="/static/images/skyscraper_img.jpg" />
+          <img src="/images/skyscraper_img.jpg" />
         </div>
         <div class="span-5 last">
-          <img src="/static/images/wideskyscraper_img.jpg" />
+          <img src="/images/wideskyscraper_img.jpg" />
         </div>
       </div>
     
