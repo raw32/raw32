@@ -29,13 +29,16 @@ class MainHandler(webapp.RequestHandler):
     if path == '':
       path = os.path.join(os.path.dirname(__file__), 'index.html')
       self.response.out.write(template.render(path, {}))
-    else:
-      print >>sys.stderr, path
-      path = os.path.join(os.path.dirname(__file__), path)
-      if os.path.exists(path):
-        self.response.out.write(template.render(path, {}))
+    else:      
+      if path.endswith('/'):
+        path = path[0:-1]
+        path = os.path.join(os.path.dirname(__file__), path)
+        if os.path.exists(path):
+          self.response.out.write(template.render(path, {}))
+        else:
+          self.response.out.write('404')
       else:
-        self.response.out.write('404')
+        self.redirect(''.join(['/', path, '/']), permanent=True)
 
 
 def main():
