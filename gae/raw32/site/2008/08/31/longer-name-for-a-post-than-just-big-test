@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1>Big Test</h1>
+<h1>Longer Name for a Post than Just Big Test</h1>
 <div class="by">by Andrew Arrow</div>
 
 <div>
