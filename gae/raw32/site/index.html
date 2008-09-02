@@ -2,6 +2,8 @@
 
 {% block content %}
 
-test2
+{% for story in stories %}
+<a href="{{ story }}">{{ story }}</a><br/>
+{% endfor %}
 
 {% endblock %}

@@ -27,8 +27,15 @@ class MainHandler(webapp.RequestHandler):
 
   def get(self, path):
     if path == '':
+      stories = []
+      for item1 in os.listdir(os.path.join(os.path.dirname(__file__), 'site/2008')):
+        for item2 in os.listdir(os.path.join(os.path.join(os.path.dirname(__file__), 'site/2008'), item1)):
+          for item3 in os.listdir(os.path.join(os.path.join(os.path.join(os.path.dirname(__file__), 'site/2008'), item1), item2)):
+            stories.append(''.join(['2008/', item1, '/', item2, '/', item3]))
+      stories.reverse()
+      
       path = os.path.join(os.path.dirname(__file__), 'site/index.html')
-      self.response.out.write(template.render(path, {}))
+      self.response.out.write(template.render(path, { 'stories': stories }))
     else:      
       if path.endswith('/'):
         path = path[0:-1]
