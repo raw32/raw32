@@ -22,7 +22,9 @@ import sys
 
 from google.appengine.ext import webapp
 
-
+class Story:
+  pass
+  
 class MainHandler(webapp.RequestHandler):
 
   def get(self, path):
@@ -30,13 +32,31 @@ class MainHandler(webapp.RequestHandler):
       stories = []
       for item1 in os.listdir(os.path.join(os.path.dirname(__file__), 'site/2008')):
         for item2 in os.listdir(os.path.join(os.path.join(os.path.dirname(__file__), 'site/2008'), item1)):
-          for item3 in os.listdir(os.path.join(os.path.join(os.path.join(os.path.dirname(__file__), 'site/2008'), item1), item2)):
+          for item3 in os.listdir(os.path.join(os.path.join(os.path.join(os.path.dirname(__file__), 'site/2008'), item1), item2)):          
             stories.append(''.join(['2008/', item1, '/', item2, '/', item3]))
       stories.sort()
       stories.reverse()
       
+      data = []
+      for story in stories:
+        s = Story()
+        s.lines = []
+        file = open(os.path.join(os.path.dirname(__file__), ''.join(['site/', story])))
+        count = 0
+        while 1:
+          line = file.readline()
+          if count == 4:
+            s.title = line
+          if not line or line == "<!-- break -->\n":
+            break
+          if count > 4:
+            s.lines.append(line)
+          count = count + 1
+        s.url = story
+        data.append(s)
+        
       path = os.path.join(os.path.dirname(__file__), 'site/index.html')
-      self.response.out.write(template.render(path, { 'stories': stories }))
+      self.response.out.write(template.render(path, { 'stories': data }))
     else:      
       if path.endswith('/'):
         path = path[0:-1]
