@@ -32,6 +32,7 @@ class MainHandler(webapp.RequestHandler):
         for item2 in os.listdir(os.path.join(os.path.join(os.path.dirname(__file__), 'site/2008'), item1)):
           for item3 in os.listdir(os.path.join(os.path.join(os.path.join(os.path.dirname(__file__), 'site/2008'), item1), item2)):
             stories.append(''.join(['2008/', item1, '/', item2, '/', item3]))
+      stories.sort()
       stories.reverse()
       
       path = os.path.join(os.path.dirname(__file__), 'site/index.html')
